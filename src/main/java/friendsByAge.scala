@@ -19,13 +19,10 @@ object friendsByAge {
     val filedata=sc.textFile("fakeFriend.csv")
     val both=filedata.map(mapping)
 //doubt
-    val totalByAge=both.mapValues(x=>(x,1)).reduceByKey((x,y)=>( x._1+y._1,x._2+y._2))
+    val totalByAge=both.mapValues(x=>(x,1)).reduceByKey((x,y)=>(x._1+y._1,x._2+y._2))
     totalByAge.foreach(x=>println(x))
 
     //val avrgByAge=totalByAge.mapValues(x => x._1 / x._2)
 
-
-
-
-  }
+}
 }
